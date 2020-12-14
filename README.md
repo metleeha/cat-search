@@ -1,4 +1,10 @@
-# Front-end Dev Challenge
+# Vanila Practice
+> 프로그래머스 2020 Dev-Matching: 프론트엔드 과제 
+
+- 시맨틱 마크업
+- 반응형 페이지 
+
+
 ## 고양이 검색기 
 
 ### 1. (필수) 추천 검색어 보여주기 
