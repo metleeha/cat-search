@@ -1,15 +1,28 @@
 {
-  "name": "frontend",
+  "name": "vanila-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "Programmers 2020 Dev-Matching",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d dist -w",
+    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/",
     "start": "http-server -c-1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metleeha/vanila-practice.git"
+  }
   "keywords": [],
-  "author": "",
+  "author": "metleeha",
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.12.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "eslint": "^7.15.0"
   }
 }
