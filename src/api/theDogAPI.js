@@ -12,7 +12,7 @@ const request = async (url) => {
 const api = {
     fetchDogs: async keyword => {
         const breeds = (await api.searchBreedByName(keyword)).map(breed => { return breed.id; });
-        const requests = breeds.map(id => { return request(`${API_ENDPOINT}/images/search?limit=50&breed_ids=${id}`); });
+        const requests = breeds.map(id => { return request(`${API_ENDPOINT}/images/search?limit=20&breed_ids=${id}`); });
 
         return Promise.all(requests).then(responses => {
             let result = [];
@@ -21,7 +21,7 @@ const api = {
         });
     },
     fetchRandomDogs: () => {
-        return request(`${API_ENDPOINT}/images/search?limit=50`);
+        return request(`${API_ENDPOINT}/images/search?limit=20`);
     },
     searchBreedByName: keyword => {
         return request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);

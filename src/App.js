@@ -16,16 +16,19 @@ export default class App {
             onSearch: keyword => {
                 loading.toggleSpinner();
                 api.fetchDogs(keyword).then(data => { 
+                    console.log("api call");
                     loading.toggleSpinner();
                     setItem('data', data);
-                    resultsSection.setState(data); });
+                    resultsSection.setState(data); 
+                });
             },
             onRandom: () => {
                 loading.toggleSpinner();
                 api.fetchRandomDogs().then(data => { 
                     loading.toggleSpinner();
                     setItem('data', data);
-                    resultsSection.setState(data); });
+                    resultsSection.setState(data); 
+                });
             }
         });
 
@@ -34,6 +37,16 @@ export default class App {
             data,
             onClick: data => {
                 detailModal.setState(data);
+            },
+            onScroll: () => {
+                loading.toggleSpinner();
+                api.fetchRandomCats().then(data => {
+                    loading.toggleSpinner();
+                    const beforeData = getItem('data');
+                    const nextData = beforeData.concat(data);
+                    setItem('data', nextData);
+                    resultsSection.setState(nextData);
+                });
             }
         });
 
@@ -47,7 +60,7 @@ export default class App {
 
         this.focusOnSearchBox();
     }
-    
+
     focusOnSearchBox() {
         const searchBox = document.querySelector('.search-box');
         searchBox.focus();
