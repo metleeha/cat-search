@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+/* Searching Section */
+
 .searching-section {
     display: flex;
     justify-content: center;
@@ -38,6 +40,8 @@
     margin-right: 10px;
 }
 
+/* Result Section */
+
 .result-section {
     margin-top: 3%;
 }
@@ -59,6 +63,8 @@
     width: 500px;
 }
 
+/* Card */
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +85,8 @@
 .card-image {
     height: 70%;
 }
+
+/* Modal */
 
 .hidden {
     visibility: hidden;
@@ -133,6 +141,8 @@
     margin: 0;
 }
 
+/* Spinner */
+
 .spinner-wrapper {
     position: fixed;
     top: 0;
@@ -154,3 +164,33 @@
     height: 400px;
     border-radius: 49%;
 } 
+
+/* Error Handling */
+.error-section {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.error-image {
+    margin-top: 10%;
+    border-radius: 10%;
+    width: 20%;
+}
+
+.status-code {
+    margin: 0;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.error-message {
+    margin-top: -15px;
+    font-size: 20px;
+} 
+
+.return-btn {
+    margin-top: 15px;
+}

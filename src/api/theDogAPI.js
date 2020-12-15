@@ -1,27 +1,65 @@
+/* eslint-disable no-useless-catch */
 const API_ENDPOINT = 'https://api.thedogapi.com/v1';
 
 const request = async (url) => {
     try {
-        const result = await fetch(url);
-        return result.json();
+        const response = await fetch(url);
+
+        if (response.ok) {
+            const data = await response.json();
+            return data;
+        } else {
+            const errorData = await response.json();
+            throw errorData;
+        }
     } catch (e) {
-        console.warn(e);
+        throw {
+            message: e.message,
+            status: e.status
+        };
     }
 };
 
 const api = {
     fetchDogs: async keyword => {
-        const breeds = (await api.searchBreedByName(keyword)).map(breed => { return breed.id; });
-        const requests = breeds.map(id => { return request(`${API_ENDPOINT}/images/search?limit=20&breed_ids=${id}`); });
+        /*
+            keyword로 breed를 찾고 각 breed의 id로 이미지를 찾는다.
+        */
+       try {
+            const breeds = await request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);
+            const requests = breeds.map(async breed => {
+                return await request(`${API_ENDPOINT}/images/search?limit=20&breed_ids=${breed.id}`);
+            });
+            const responses = await Promise.all(requests);
+            const result = Array.prototype.concat.apply([], responses);
 
-        return Promise.all(requests).then(responses => {
-            let result = [];
-            responses.forEach(response => { result = result.concat(response); });
-            return result;
-        });
+            return {
+                isError: false,
+                data: result
+            };
+        } catch(e) {
+            return {
+                isError: true,
+                data: e
+            };
+        }
     },
-    fetchRandomDogs: () => {
-        return request(`${API_ENDPOINT}/images/search?limit=20`);
+    fetchRandomDogs: async () => {
+        /*
+            랜덤으로 20개의 강아지 사진을 리턴한다.
+        */
+        try {
+            const result = await request(`${API_ENDPOINT}/images/search?limit=20`);
+            return {
+                isError: false,
+                data: result
+            };
+        } catch(e) {
+            return {
+                isError: true,
+                data: e
+            };
+        }
     },
     searchBreedByName: keyword => {
         return request(`${API_ENDPOINT}/breeds/search?q=${keyword}`);

@@ -1,17 +1,13 @@
 export default class Card {
-    constructor({$target, data, onClick}) {
-        this.onClick = onClick;
+    constructor({$target, data}) {
         this.data = data;
         this.card = document.createElement('article');
         this.card.className = 'dog-card';
+        this.card.dataset.id = data.id;
 
         $target.appendChild(this.card);
 
         this.render();
-    }
-
-    getDetail() {
-        this.onClick(this.data);
     }
 
     render() {
@@ -33,8 +29,6 @@ export default class Card {
         const dogOrigin = document.createElement('p');
         dogOrigin.className = 'dog-origin';
         dogOrigin.innerText = origin;
-
-        this.card.addEventListener('click', () => { this.getDetail(); });
 
         cardInfo.appendChild(dogName);
         cardInfo.appendChild(dogOrigin);
