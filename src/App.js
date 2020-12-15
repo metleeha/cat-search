@@ -1,7 +1,7 @@
 import SearchBar from './components/SearchBar.js';
 import SearchResult from './components/SearchResult.js'
 import SearchInfo from './components/SearchInfo.js';
-import { api } from './api/theCatAPI.js';
+import { api } from './api/theDogAPI.js';
 
 export default class App {
     constructor() {

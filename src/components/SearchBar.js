@@ -18,7 +18,7 @@ export default class SearchBar {
 
         const searchBox = document.createElement('input');
         searchBox.className = 'search-box';
-        searchBox.placeholder = '고양이를 검색하세요.';
+        searchBox.placeholder = '강아지를 검색하세요.';
 
         randomBtn.addEventListener('click', e => {
             this.onRandom();
