@@ -1,7 +1,9 @@
+import Item from './Item.js';
+
 export default class SearchResult {
+
     constructor($target) {
         this.$target = $target;
-        this.data = data;
         this.data = [];
 
         this.render();
@@ -12,8 +14,7 @@ export default class SearchResult {
         this.render();
     }
 
-
-    render () {
+    render() {
         this.$target.innerHTML = '';
 
         const itemGroupWrapper = document.createElement('div');
@@ -21,12 +22,12 @@ export default class SearchResult {
 
         const itemGroup = document.createElement('div');
         itemGroup.className = 'item-group';
+
         this.data.map(cat => {
             new Item(itemGroup, cat);
         });
-
+        
         itemGroupWrapper.appendChild(itemGroup);
         this.$target.appendChild(itemGroupWrapper);
-        
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "vanila-practice",
+  "name": "vanilla-cat-search",
   "version": "1.0.0",
   "description": "Programmers 2020 Dev-Matching",
   "main": "index.js",
@@ -10,9 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/metleeha/vanila-practice.git"
-  }
-  "keywords": [],
+    "url": "git+https://github.com/metleeha/vanilla-cat-search.git"
+  },
   "author": "metleeha",
   "license": "ISC",
   "dependencies": {

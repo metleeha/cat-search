@@ -1,0 +1,40 @@
+.top {
+    display: block;
+    height: 10%;
+}
+
+.bottom {
+    display: block;
+    height: 90%;
+}
+
+.random-btn {
+    font-size: 30px;
+    margin: 5px;
+}
+
+.search-box {
+    width: 60%;
+    font-size: 30px;
+    margin: 5px;
+}
+
+.item-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: flex-start;
+    margin: 10px;
+}
+
+.item {
+    display:flex;
+    flex-direction: column;
+    margin: 4px;
+    height: 300px;
+    width: 200px;
+}
+
+.item-img {
+    height: 70%;
+    width: 100%;
+} 
