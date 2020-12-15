@@ -57,12 +57,6 @@ export default class App {
         const loading = new Loading({
             $target
         });
-
-        this.focusOnSearchBox();
     }
 
-    focusOnSearchBox() {
-        const searchBox = document.querySelector('.search-box');
-        searchBox.focus();
-    }
 }

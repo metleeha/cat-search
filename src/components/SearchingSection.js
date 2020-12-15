@@ -12,6 +12,13 @@ export default class SearchBar {
         $target.appendChild(this.section);
 
         this.render();
+
+        this.focusOnSearchBox();
+    }
+
+    focusOnSearchBox() {
+        const searchBox = document.querySelector('.search-box');
+        searchBox.focus();
     }
 
     addRecentKeyword(keyword) {
