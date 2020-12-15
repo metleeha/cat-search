@@ -5,13 +5,16 @@ import { api } from './api/theCatAPI.js';
 
 export default class App {
     constructor() {
-        console.log("App is created!");
 
         const top = document.createElement('div');
         top.className = 'top';
 
         const bottom = document.createElement('div');
         bottom.className = 'bottom';
+
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.classList.add('hidden');
 
         const searchBar = new SearchBar(top,
             keyword => {
@@ -25,10 +28,20 @@ export default class App {
                 });
             }
         );
-        const searchResult = new SearchResult(bottom);
-        const searchInfo = new SearchInfo(document.body, []);
+        
+        const searchResult = new SearchResult(bottom,
+            target => {
+                const modal = document.querySelector('.modal');
+                searchInfo.updateData(target.data);
+                modal.classList.toggle('hidden');
+            }
+        );
+
+        const searchInfo = new SearchInfo(modal);
 
         document.body.appendChild(top);
         document.body.appendChild(bottom);
+        document.body.appendChild(modal);
+
     }
 }
