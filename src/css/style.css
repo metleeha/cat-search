@@ -19,13 +19,31 @@
     margin-right: 10px;
 }
 
+.noticeSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice {
+    margin-top: 8%;
+    text-align: center;
+}
+
+.notice-image {
+    height: 400px;
+    width: 500px;
+}
+
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.cat-card {
+.dog-card {
     display: flex;
     flex-direction: column;
 
@@ -92,3 +110,25 @@
 .modal-title {
     margin: 0;
 }
+
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+.spinner-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 49%;
+} 
