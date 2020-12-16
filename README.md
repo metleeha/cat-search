@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17fd4eb1-c8c1-4fe2-a28b-4cf6a07a080e/deploy-status)](https://app.netlify.com/sites/ilovedog/deploys)
+
 # ilovedog
 > 프로그래머스 2020 Dev-Matching 프론트엔드 과제 
 
