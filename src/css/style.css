@@ -99,12 +99,24 @@
 .dog-card {
     display: flex;
     flex-direction: column;
-
     /* TODO: 카드 정렬하기 */
     margin-left: calc( (100% - (20% * 4)) / 4 );
     
     width: 250px;
     height: 350px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .dog-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10%;
+        padding-left: 19.5%;
+        width: 150px;
+    }
 }
 
 .card-image {
@@ -165,6 +177,22 @@
 
 .modal-title {
     margin: 0;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .modal-contents {
+        font-size: 12px;
+        height: 50%;
+        width: 40%;
+    }
+
+    .modal-image {
+        height: 45%;
+    }
+
+    .modal-header {
+        font-size: 16px;
+    }
 }
 
 /* Spinner */
@@ -229,6 +257,14 @@
     right: 5rem;
     z-index: 3;
 } 
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .darkmode-btn {
+        font-size: 1.5rem;
+        right: 2rem;
+        top: 1.5rem;
+    }
+}
 /* Scroll To Top */
 .scroll-top-btn {
     right: 25px;
@@ -244,4 +280,12 @@
     border-radius: 60px;
     text-decoration: none;
     display: block;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .scroll-top-btn {
+        right: 10px;
+        bottom: 10px;
+        padding: 10px;
+    }
 }
