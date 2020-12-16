@@ -45,6 +45,7 @@ export default class SearchBar {
 
     render() {
         this.section.innerHTML = '';
+        
         const randomBtn = document.createElement('span');
         randomBtn.className = 'random-btn';
         randomBtn.innerText = '🐶';

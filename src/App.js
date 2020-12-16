@@ -3,6 +3,7 @@ import ResultsSection from './components/ResultsSection.js';
 import DetailModal from './components/DetailModal.js';
 import Loading from './components/Loading.js';
 import Error from './components/Error.js';
+import ScrollBtn from './components/ScrollBtn.js';
 import { api } from './api/theDogAPI.js';
 import { getItem, setItem } from './util/sessionStorage.js';
 
@@ -77,6 +78,10 @@ export default class App {
         darkmodeBtn.innerText = '🌕';
 
         $target.appendChild(darkmodeBtn);
+
+        const scrollBtn = new ScrollBtn({
+            $target
+        });
     }
 
 }
