@@ -16,11 +16,11 @@ export default class App {
             keywords,
             onSearch: async keyword => {
                 loading.toggleSpinner();
+
                 const response = await api.fetchDogs(keyword);
                 if(!response.isError){
                     setItem('data', response.data);
                     resultsSection.setState(response.data);
-                    
                     loading.toggleSpinner();
                 } else {
                     error.setState(response.data);
@@ -71,6 +71,12 @@ export default class App {
         const error = new Error({
             $target
         });
+
+        const darkmodeBtn = document.createElement('span');
+        darkmodeBtn.className = 'darkmode-btn';
+        darkmodeBtn.innerText = '🌕';
+
+        $target.appendChild(darkmodeBtn);
     }
 
 }

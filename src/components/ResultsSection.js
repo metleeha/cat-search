@@ -41,7 +41,6 @@ export default class ResultsSection {
                 new Card({
                     $target: cardContainer,
                     data: dog,
-                    onClick: this.onClick
                 });
             });
 
