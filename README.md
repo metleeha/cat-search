@@ -1,6 +1,7 @@
 # ilovedog
-> 프로그래머스 2020 Dev-Matching: 프론트엔드 과제 
-> 학습: https://github.com/woohyeonjo/ilovecat-javascript
+> 프로그래머스 2020 Dev-Matching 프론트엔드 과제 
+
+학습: https://github.com/woohyeonjo/ilovecat-javascript
 
 <img src="ilovedog.png" alt="ilovedog" width="750" height="450"/>
 
